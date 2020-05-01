@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="https://www.w3.org/StyleSheets/Core/Modernist.css">
+    <title>purejs-markdown-blog</title>
+    <style>
+      blockquote {
+        font-style: italic;
+        font-weight: 700;
+        position: relative;
+      }
+
+    </style>
+  </head>
+  <body>
+
+      <main>
+        <p>Hello this is a simple vanilla js pwa with a markdown blog</p>
+        <p>It only uses VanillaJS, Fetch API, Snarkdown(simple light md parser) and your browser.</p>
+
+
+        <articles>
+          <h3>What it uses?</h3>
+          <p>It only uses pure, plain, simple vanilla JavaScript!, A bit of CSS! HTML just for... you know, works on browser. LOL</p>
+          
+        </articles>
+
+
+        <articles>
+          <h3>How it is made?</h3>
+          <p>No pre/post/wibbly-wobbly processor for <em><strong>ANYTHING</strong></em></p>
+          <p> It is just simple as:
+            <ol>
+              <li>A JSON file describing post's name and file</li>
+              <li>A JS to know whether to show the post's list or the post articles, based on anchor #id-of-section. As if it was a 'native pwa'.</li>
+              <li>A JS to know when the #id-of-section is in use to: 
+                <ol>
+                  <li>Valide the url after the hash to know if it renders the post's list or the post</li>
+                  <li>Get the list of post based on the json file</li>
+                  <li>Get the post content</li>
+                  <li>Parse and render the markdown content into html</li>
+                </ol>
+              </li>
+              <li>Fetch API for request both json file and the post article file when it's requested. <small>In order to simplify its use, i'm using a fetch api wrapper, pure js also.</small></li>
+              <li>A Simple, light, fast markdown parser. I've use <a href="https://github.com/developit/snarkdown">Snarkdown</a> </li>
+              <li>Coffee</li>
+            </ol>
+          </p>
+           <p> Oh wait, that is in fact how it was.</p>
+         
+
+          <p>Looking up in the source files here you will see, i got these structure:</p>
+
+          <ul>
+            <li>/assets
+              <dl>
+                <dt>/blog</dt>
+                <dd>Here is the folder where i save all the <em><b>.md</b></em> files.</dd>
+                <dt>blog.json</dt>
+                <dd>Here is a simple json object with the post's array, each object has the properties: title (for showing) and name (the file name to request)</dd>
+              </dl>
+            </li>
+            <li>/scripts
+              <dl>
+                <dt>blog.js</dt>
+                <dd>The one who takes care of the blog rendering, fetching, parsing and so on.</dd>
+
+                <dt>content.js</dt>
+                <dd>The one who takes care of what it shows on page (i'm current using because i made this example based on what i used on my website)</dd>
+
+                <dt>Request.js</dt>
+                <dd>The fatch api wrapper to simplify the code</dd>
+
+                <dt>snarkdown.js</dt>
+                <dd>The markdown parser</dd>
+              </dl>
+            </li>
+            <li>/style</li>
+            <li>index.html</li>
+            <li>main.js</li>
+          </ul>
+        </article>
+    
+        <articles>
+        <h3>How to use?</h3>
+        <p>If you want to use it as i used or if you want to use it as initial idea to improve it as you need, you will have to:</p>
+        <p>Copy these whole source, really, all here, just copy, adjust the css as you need. Made the blog.html you indes.html.</p>
+        <p>You will have to do 3 important things exactly the same:</p>
+        <ol>
+          <li>Have the assets folder inside root folder</li>
+          <li>Have the blog folder inside assets folder</li>
+          <li>Have the blog.json file inside assets folder</li>
+        </ol>
+
+        <p>
+          Than you just import the content module and init it, as in <code>main.js</code>, it's really, really simple, has no secret or magic at all.
+
+
+
+
+
+        </p>
+        </articles>
+        <articles>
+        <h3>Why?</h3>
+<p>I know, i know...</p>
+<blockquote>We already have a tons of static generators: gatsby, jenkyll, hugo, next, bla bla bla bla</blockquote>
+
+<p>
+But, i'm not a framework person, and i am not saying they're bad, i just dont think that a i need aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaallllllllllll of it just ot make a simple blog. And in fact i didn't.
+You can see, i used, 3 to 6 files just for make the blog.
+NO FREAKING NODE MODULES, NO FECKING FRAMEWORKER BUNDLERS.
+An i even minified it or make a bundle, and it is fast enought to me.
+</p>
+<p>
+I'm not trying to remake the whell here, i just wanted to make it on the core.
+</p>
+</p>
+<p>
+I was not build for be a large scale tool, i was not build for be a big stuff.
+</p>
+<p>
+I just made it because of my curiosity, and i think that i may be useful for someone.
+</p>
+<p>
+
+Thanks if you read till here.
+</p>
+</articles>
+
+        <hr>
+        You can see the example in  <a href="./blog.html#blog">Blog</a>, and in it source folder.
+
+        I've also use in my personal page <a href="https://schirrel.dev">schirrel.dev</a>
+
+        <p>If you got here out of nowhere, you can see the <a href="https://github.com/schirrel/purejs-markdown-blog">repo</a></p>
+
+    </main>
+
+    <small>I was too lazy to make a pretty page, sorry!</small>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+@import url('blog.css');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+body,
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30vh;
+  font-family: 'Manrope', sans-serif;
+}
+
+body[data-section] section {
+    opacity: 0;
+  }
+  
+  body[data-section-active] section {
+    display: none;
+  }
+  
+  body[data-section] section.active {
+    display: block;
+    opacity: 1;
+  }
+  
